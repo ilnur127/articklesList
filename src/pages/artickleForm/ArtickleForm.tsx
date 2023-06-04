@@ -146,20 +146,18 @@ const EditArtickle = ({ artickleId }: { artickleId: string | undefined }): JSX.E
 
 const ArtickleForm = (): JSX.Element => {
   const { artickleId } = useParams()
-  if (artickleId === 'new') {
-    return (
-      <>
-        <HeaderComponent text="Добавление новой статьи" />
-        <NewArtickle />
-      </>
-    )
-  } else {
+
+  return artickleId === 'new'
+    ? (
+    <>
+      <HeaderComponent text="Добавление новой статьи" />
+      <NewArtickle />
+    </>)
+    : (
     <>
       <HeaderComponent text="Изменение статьи" />
       <EditArtickle artickleId={artickleId} />
-    </>
-  }
-  return <></>
+    </>)
 }
 
 export default ArtickleForm

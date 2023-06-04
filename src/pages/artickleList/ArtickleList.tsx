@@ -191,7 +191,7 @@ const ArtickeList = (): JSX.Element => {
           .filter(
             (artickle) =>
               artickle.header.includes(searchValue) ||
-              artickle.author?.userName.includes(searchValue)
+              artickle.topic?.topicName.includes(searchValue)
           )
           .map((artickle) => (
             <ArtickleComponent key={artickle.id} artickle={artickle} />
